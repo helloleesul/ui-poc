@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function SelectDemo() {
+export function BasicSelect() {
   return (
     <Select>
       <SelectTrigger className="w-[180px]">

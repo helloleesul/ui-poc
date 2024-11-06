@@ -90,5 +90,4 @@ const SelectItems = React.forwardRef<
     </Select.Item>
   );
 });
-
 export default SelectDemo;

@@ -1,33 +1,33 @@
-import ButtonDemo from "./components/ButtonDemo.tsx";
-import DialogDemo from "./components/DialogDemo.tsx";
-import SelectDemo from "./components/SelectDemo.tsx";
-import TabsDemo from "./components/TabsDemo.tsx";
+import { Button } from "@radix-ui/themes";
+import BasicDialog from "./components/BasicDialog.tsx";
+import BasicSelect from "./components/BasicSelect.tsx";
+import BasicTabs from "./components/BasicTabs.tsx";
 
 function App() {
   return (
     <ul className="demo">
       <li>
         <div>
-          <h3>ButtonDemo</h3>
-          <ButtonDemo />
+          <h3>Button</h3>
+          <Button>Button</Button>
         </div>
       </li>
       <li>
         <div>
-          <h3>DialogDemo</h3>
-          <DialogDemo />
+          <h3>Dialog</h3>
+          <BasicDialog />
         </div>
       </li>
       <li>
         <div>
-          <h3>SelectDemo</h3>
-          <SelectDemo />
+          <h3>Select</h3>
+          <BasicSelect />
         </div>
       </li>
       <li>
         <div>
-          <h3>TabsDemo</h3>
-          <TabsDemo />
+          <h3>Tabs</h3>
+          <BasicTabs />
         </div>
       </li>
     </ul>

@@ -27,8 +27,7 @@ const DialogDemo = () => (
           <input
             className="inline-flex h-[35px] w-full flex-1 items-center justify-center rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-violet8"
             id="name"
-            onChange={(e) => console.log(e.target.value)}
-            // defaultValue="Pedro Duarte"
+            defaultValue="Pedro Duarte"
           />
         </fieldset>
         <fieldset className="mb-[15px] flex items-center gap-5">
@@ -41,7 +40,7 @@ const DialogDemo = () => (
           <input
             className="inline-flex h-[35px] w-full flex-1 items-center justify-center rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-violet8"
             id="username"
-            // defaultValue="@peduarte"
+            defaultValue="@peduarte"
           />
         </fieldset>
         <div className="mt-[25px] flex justify-end">

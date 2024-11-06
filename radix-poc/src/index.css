@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer components {
-  .demo {
-    @apply p-4 flex flex-col gap-4;
+    .demo {
+        @apply p-4 flex flex-col gap-4;
 
-    li {
-      @apply border rounded-lg p-4;
-    }
+        li {
+            @apply border rounded-lg p-4;
+        }
 
-    h3 {
-      @apply font-bold mb-2;
+        h3 {
+            @apply font-bold mb-2;
+        }
     }
-  }
 }

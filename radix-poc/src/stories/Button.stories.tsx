@@ -1,9 +1,11 @@
-import { CustomButton } from "@/components/CustomButton.tsx";
+import { Story } from "@storybook/blocks";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
+import CustomButton from "../components/CustomButton.tsx";
+import { ArrowDownIcon } from "@radix-ui/react-icons";
 
 const meta = {
-  title: "Example/Button",
+  title: "Custom/Button",
   component: CustomButton,
   parameters: {
     layout: "centered",
@@ -13,16 +15,13 @@ const meta = {
     children: { control: "text" },
     variant: {
       control: "radio",
-      options: [
-        "default",
-        "destructive",
-        "outline",
-        "secondary",
-        "ghost",
-        "link",
-      ],
+      options: ["black", "blue"],
     },
-    size: { control: "radio", options: ["default", "sm", "lg", "icon"] },
+    intent: {
+      control: "radio",
+      options: ["solid", "outline"],
+    },
+    size: { control: "radio", options: ["sm", "md", "lg", "icon"] },
     disabled: { control: "boolean" },
     asChild: { control: "boolean" },
   },
@@ -35,8 +34,20 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: "추가",
-    variant: "default",
-    size: "default",
+    variant: "blue",
+    intent: "solid",
+    size: "md",
+    disabled: false,
+    asChild: false,
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    children: <ArrowDownIcon />,
+    variant: "blue",
+    intent: "solid",
+    size: "icon",
     disabled: false,
     asChild: false,
   },
