@@ -3,25 +3,38 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 
-export function CustomSelect() {
+interface SelectItem {
+  value: string;
+  label: string;
+}
+
+interface CustomSelectProps {
+  items: SelectItem[];
+  placeholder: string;
+  onValueChange: (value: string) => void;
+}
+
+export function CustomSelect({
+  items,
+  placeholder,
+  onValueChange,
+}: CustomSelectProps) {
   return (
-    <Select>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select a fruit" />
+    <Select onValueChange={onValueChange}>
+      <SelectTrigger>
+        <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent position="popper" sideOffset={-5}>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
+          {items.map((item) => (
+            <SelectItem key={item.value} value={item.value}>
+              {item.label}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

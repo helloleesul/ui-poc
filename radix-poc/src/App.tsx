@@ -9,7 +9,13 @@ function App() {
       <li>
         <div>
           <h3>Button</h3>
-          <Button>Button</Button>
+          <Button
+            size="3"
+            className="h-9 w-[116px] font-bold rounded-sm bg-[#00adff]"
+          >
+            등록완료
+          </Button>
+          <Button className="block sm:px-6 md:px-8 lg:px-10">Button</Button>
         </div>
       </li>
       <li>

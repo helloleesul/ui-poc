@@ -1,16 +1,30 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export function CustomTabs() {
+interface CustomTabsProps {
+  tabsData: {
+    label: string;
+    value: string;
+    content: React.ReactNode;
+  }[];
+}
+
+export function CustomTabs({ tabsData }: CustomTabsProps) {
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
-      <TabsList>
-        <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="password">Password</TabsTrigger>
+    <Tabs defaultValue={tabsData[0]?.value || "tab1"} orientation="vertical">
+      <TabsList aria-label="tabs example">
+        {tabsData.map((tab) => (
+          <TabsTrigger key={tab.value} value={tab.value}>
+            {tab.label}
+          </TabsTrigger>
+        ))}
       </TabsList>
-      <TabsContent value="account">
-        Make changes to your account here.
-      </TabsContent>
-      <TabsContent value="password">Change your password here.</TabsContent>
+      <div className="border border-light-grey border-t-0 rounded-bl-md rounded-br-md p-5">
+        {tabsData.map((tab) => (
+          <TabsContent key={tab.value} value={tab.value}>
+            {tab.content}
+          </TabsContent>
+        ))}
+      </div>
     </Tabs>
   );
 }
