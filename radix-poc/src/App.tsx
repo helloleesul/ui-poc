@@ -2,10 +2,17 @@ import { Button } from "@radix-ui/themes";
 import BasicDialog from "./components/BasicDialog.tsx";
 import BasicSelect from "./components/BasicSelect.tsx";
 import BasicTabs from "./components/BasicTabs.tsx";
+import CustomTable from "./components/CustomTable.tsx";
 
 function App() {
   return (
     <ul className="demo">
+      <li>
+        <div>
+          <h3>Table</h3>
+          <CustomTable />
+        </div>
+      </li>
       <li>
         <div>
           <h3>Button</h3>

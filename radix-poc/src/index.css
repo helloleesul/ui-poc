@@ -13,5 +13,14 @@
         h3 {
             @apply font-bold mb-2;
         }
+
+    }
+
+    .custom-table {
+        tbody {
+            tr {
+                @apply hover:bg-amber-50 hover:cursor-pointer;
+            }
+        }
     }
 }
